@@ -63,7 +63,7 @@ class AppTextStyles {
     fontFamily: _font,
     fontSize: 16.sp,
     fontWeight: FontWeight.w700,
-    color: AppColors.primary,
+    color: AppColors.primaryYellow,
   );
 
   static TextStyle get oldPrice => TextStyle(

@@ -10,7 +10,7 @@ class AppTheme {
     useMaterial3: true,
     fontFamily: 'Cairo',
     colorScheme: const ColorScheme.light(
-      primary: AppColors.primary,
+      primary: AppColors.primaryYellow,
       onPrimary: AppColors.textWhite,
       surface: AppColors.surface,
       onSurface: AppColors.textPrimary,
@@ -18,7 +18,7 @@ class AppTheme {
     scaffoldBackgroundColor: AppColors.background,
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(
-        backgroundColor: AppColors.primary,
+        backgroundColor: AppColors.primaryYellow,
         foregroundColor: AppColors.textWhite,
         textStyle: AppTextStyles.button,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8.r)),
