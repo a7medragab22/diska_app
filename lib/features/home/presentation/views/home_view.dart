@@ -1,4 +1,6 @@
+import 'package:diska_app/core/themes/app_colors.dart';
 import 'package:diska_app/features/home/data/models/offer_model.dart';
+import 'package:diska_app/features/home/presentation/widgets/category_grid.dart';
 import 'package:diska_app/features/home/presentation/widgets/header_section.dart';
 import 'package:diska_app/features/home/presentation/widgets/offer_slider.dart';
 import 'package:diska_app/features/home/presentation/widgets/top_bar.dart';
@@ -34,7 +36,28 @@ class HomeView extends StatelessWidget {
             SliverToBoxAdapter(child: SizedBox(height: 20.h)),
             SliverToBoxAdapter(child: OfferSlider(offers: offers)),
             SliverToBoxAdapter(child: SizedBox(height: 80.h)),
-            SliverToBoxAdapter(child: Center(child: Text('kadfsjllsd'))),
+            SliverToBoxAdapter(
+              child: Center(
+                child: Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 16.w),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      Text(
+                        'تسوق حسب القسم',
+                        style: TextStyle(
+                          fontSize: 30.sp,
+                          fontWeight: FontWeight.bold,
+                          color: AppColors.primaryDark,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ),
+            SliverToBoxAdapter(child: SizedBox(height: 20.h)),
+            CategoryGrid(),
           ],
         ),
       ),
