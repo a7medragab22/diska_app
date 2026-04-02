@@ -1,5 +1,6 @@
 import 'package:diska_app/core/themes/app_colors.dart';
 import 'package:diska_app/features/home/data/models/offer_model.dart';
+import 'package:diska_app/features/home/presentation/views/product_view.dart';
 import 'package:diska_app/features/home/presentation/widgets/category_grid.dart';
 import 'package:diska_app/features/home/presentation/widgets/header_section.dart';
 import 'package:diska_app/features/home/presentation/widgets/offer_slider.dart';
@@ -26,7 +27,7 @@ class HomeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFFF5F5F5),
+      backgroundColor: AppColors.background,
       body: SafeArea(
         child: CustomScrollView(
           slivers: [
@@ -58,6 +59,8 @@ class HomeView extends StatelessWidget {
             ),
             SliverToBoxAdapter(child: SizedBox(height: 20.h)),
             CategoryGrid(),
+            SliverToBoxAdapter(child: SizedBox(height: 20.h)),
+            const ProductsView(),
           ],
         ),
       ),

@@ -6,7 +6,7 @@ class AppColors {
   static const Color primaryYellow = Color(0xFFfacc15);
   static const Color primaryDark = Color(0xFF0f172a);
 
-  static const Color background = Color(0xFFF5F5F5);
+  static const Color background = Color.fromARGB(255, 226, 225, 225);
   static const Color surface = Color(0xFFFFFFFF);
   static const Color surfaceGrey = Color(0xFFF9F9F9);
 
