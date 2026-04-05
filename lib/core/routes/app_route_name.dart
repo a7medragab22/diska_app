@@ -1,8 +1,10 @@
 import 'package:diska_app/core/routes/app_route.dart';
+import 'package:diska_app/features/cart/presentation/views/cart_view.dart';
 import 'package:diska_app/features/home/logic/cubits/category_cubit/category_cubit.dart';
 import 'package:diska_app/features/home/logic/cubits/offer_cubit/offer_cubit.dart';
 import 'package:diska_app/features/home/logic/cubits/product_cubit/product_cubit.dart';
 import 'package:diska_app/features/home/presentation/views/home_view.dart';
+import 'package:diska_app/features/notifications/presentation/views/notification_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -16,5 +18,7 @@ class AppRouteName {
       ],
       child: const HomeView(),
     ),
+    AppRoute.cartView: (context) => CartView(),
+    AppRoute.notificationsView: (context) => const NotificationView(),
   };
 }

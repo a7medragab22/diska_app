@@ -1,4 +1,6 @@
 import 'package:diska_app/core/themes/app_colors.dart';
+import 'package:diska_app/features/cart/data/models/cart_item_model.dart';
+import 'package:diska_app/features/cart/logic/cubits/cart_cubit/cart_cubit.dart';
 import 'package:diska_app/features/home/data/models/product_model.dart';
 import 'package:diska_app/features/home/logic/cubits/product_cubit/product_cubit.dart';
 import 'package:flutter/material.dart';
@@ -109,7 +111,27 @@ class ProductCard extends StatelessWidget {
             children: [
               Expanded(
                 child: ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    final cartCubit = context.read<CartCubit>();
+                    cartCubit.addItem(
+                      CartItemModel(
+                        id:
+                            int.tryParse(product.id) ??
+                            product.id.hashCode.abs(),
+                        name: product.name,
+                        image: product.image,
+                        price: product.price,
+                        quantity: product.quantity,
+                      ),
+                    );
+
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      const SnackBar(
+                        content: Text('تم الإضافة بنجاح'),
+                        duration: Duration(seconds: 2),
+                      ),
+                    );
+                  },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: AppColors.primaryDark,
                     shape: RoundedRectangleBorder(
