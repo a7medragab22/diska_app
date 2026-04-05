@@ -1,7 +1,7 @@
 import 'package:diska_app/core/utils/custom_empty_card.dart';
 import 'package:diska_app/core/utils/footer.dart';
 import 'package:diska_app/core/utils/top_bar.dart';
-import 'package:diska_app/features/notifications/presentation/widgets/header.dart';
+import 'package:diska_app/features/notifications/presentation/widgets/notification_header.dart';
 import 'package:flutter/material.dart';
 
 class NotificationView extends StatelessWidget {
@@ -16,7 +16,7 @@ class NotificationView extends StatelessWidget {
           Expanded(
             child: CustomScrollView(
               slivers: [
-                SliverToBoxAdapter(child: Header()),
+                SliverToBoxAdapter(child: NotificationHeader()),
                 SliverToBoxAdapter(
                   child: CustomEmptyCard(
                     icon: Icons.notifications_none_outlined,

@@ -55,4 +55,12 @@ class ProductCubit extends Cubit<ProductState> {
     _products[index].isFavorite = !_products[index].isFavorite;
     emit(ProductLoaded(List.from(_products)));
   }
+
+  void setFavoriteById(String id, bool isFavorite) {
+    final index = _products.indexWhere((product) => product.id == id);
+    if (index != -1) {
+      _products[index].isFavorite = isFavorite;
+      emit(ProductLoaded(List.from(_products)));
+    }
+  }
 }
