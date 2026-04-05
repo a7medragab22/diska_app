@@ -78,9 +78,21 @@ class TopBar extends StatelessWidget {
                 },
               ),
               Spacer(flex: 1),
-              _buildItem(Icons.favorite, "المفضلة", onPressed: () {}),
+              _buildItem(
+                Icons.favorite,
+                "المفضلة",
+                onPressed: () {
+                  Navigator.pushNamed(context, AppRoute.favoritesView);
+                },
+              ),
               Spacer(flex: 1),
-              _buildItem(Icons.login, "دخول", onPressed: () {}),
+              _buildItem(
+                Icons.login,
+                "دخول",
+                onPressed: () {
+                  Navigator.pushNamed(context, AppRoute.logInView);
+                },
+              ),
               Spacer(flex: 4),
             ],
           ),

@@ -1,6 +1,8 @@
 import 'package:diska_app/core/themes/app_colors.dart';
 import 'package:diska_app/features/cart/data/models/cart_item_model.dart';
 import 'package:diska_app/features/cart/logic/cubits/cart_cubit/cart_cubit.dart';
+import 'package:diska_app/features/favourites/data/models/fav_model.dart';
+import 'package:diska_app/features/favourites/logic/cubits/fav_cubit/fav_cubit.dart';
 import 'package:diska_app/features/home/data/models/product_model.dart';
 import 'package:diska_app/features/home/logic/cubits/product_cubit/product_cubit.dart';
 import 'package:flutter/material.dart';
@@ -33,7 +35,29 @@ class ProductCard extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               IconButton(
-                onPressed: () => cubit.toggleFavorite(index),
+                onPressed: () {
+                  final favCubit = context.read<FavCubit>();
+                  final productCubit = context.read<ProductCubit>();
+                  final wasFavorite = product.isFavorite;
+                  productCubit.toggleFavorite(index);
+                  if (wasFavorite) {
+                    favCubit.removeFromFav(
+                      int.tryParse(product.id) ?? product.id.hashCode.abs(),
+                    );
+                  } else {
+                    favCubit.addToFav(
+                      FavItemModel(
+                        id:
+                            int.tryParse(product.id) ??
+                            product.id.hashCode.abs(),
+                        name: product.name,
+                        image: product.image,
+                        price: product.price,
+                        category: product.category,
+                      ),
+                    );
+                  }
+                },
                 icon: Container(
                   padding: const EdgeInsets.all(6),
                   decoration: BoxDecoration(
