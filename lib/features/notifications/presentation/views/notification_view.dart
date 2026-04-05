@@ -3,7 +3,6 @@ import 'package:diska_app/core/utils/footer.dart';
 import 'package:diska_app/core/utils/top_bar.dart';
 import 'package:diska_app/features/notifications/presentation/widgets/header.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class NotificationView extends StatelessWidget {
   const NotificationView({super.key});
