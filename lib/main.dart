@@ -1,5 +1,7 @@
 import 'package:diska_app/core/routes/app_route_name.dart';
+import 'package:diska_app/features/cart/logic/cubits/cart_cubit/cart_cubit.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 void main() {
@@ -17,11 +19,14 @@ class DiskaApp extends StatelessWidget {
       minTextAdapt: true,
       splitScreenMode: true,
       builder: (context, child) {
-        return MaterialApp(
-          debugShowCheckedModeBanner: false,
-          routes: AppRouteName.routes,
-          title: 'Diska',
-          theme: ThemeData(primarySwatch: Colors.blue),
+        return BlocProvider(
+          create: (_) => CartCubit(),
+          child: MaterialApp(
+            debugShowCheckedModeBanner: false,
+            routes: AppRouteName.routes,
+            title: 'Diska',
+            theme: ThemeData(primarySwatch: Colors.blue),
+          ),
         );
       },
     );
