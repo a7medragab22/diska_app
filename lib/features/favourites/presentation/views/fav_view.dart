@@ -1,4 +1,3 @@
-import 'package:diska_app/core/themes/app_colors.dart';
 import 'package:diska_app/core/utils/custom_empty_card.dart';
 import 'package:diska_app/core/utils/footer.dart';
 import 'package:diska_app/core/utils/top_bar.dart';
@@ -6,7 +5,6 @@ import 'package:diska_app/features/favourites/logic/cubits/fav_cubit/fav_cubit.d
 import 'package:diska_app/features/favourites/logic/cubits/fav_cubit/fav_state.dart';
 import 'package:diska_app/features/favourites/presentation/widgets/fav_header.dart';
 import 'package:diska_app/features/favourites/presentation/widgets/fav_item_card.dart';
-import 'package:diska_app/features/notifications/presentation/widgets/notification_header.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
