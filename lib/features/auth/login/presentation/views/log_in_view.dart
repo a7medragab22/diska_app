@@ -35,7 +35,6 @@ class _LoginViewState extends State<LoginView> {
                 gradient: LinearGradient(
                   colors: [Color(0xff0B1A2B), Color(0xffC9A227)],
                 ),
-           
               ),
             ),
 
@@ -252,7 +251,10 @@ class _LoginViewState extends State<LoginView> {
                         Center(
                           child: GestureDetector(
                             onTap: () {
-                              Navigator.pop(context);
+                              Navigator.pushReplacementNamed(
+                                context,
+                                AppRoute.homeView,
+                              );
                             },
                             child: Text(
                               "← العودة للرئيسية",

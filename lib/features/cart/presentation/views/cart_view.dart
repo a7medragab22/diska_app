@@ -1,3 +1,4 @@
+import 'package:diska_app/core/routes/app_route.dart';
 import 'package:diska_app/core/themes/app_colors.dart';
 import 'package:diska_app/core/utils/custom_empty_card.dart';
 import 'package:diska_app/core/utils/footer.dart';
@@ -33,7 +34,10 @@ class CartView extends StatelessWidget {
                           subtitle: "يبدو أنك لم تضف أي منتجات بعد.",
                           buttonText: "ابدأ التسوق",
                           onButtonPressed: () {
-                            Navigator.pop(context);
+                            Navigator.pushReplacementNamed(
+                              context,
+                              AppRoute.homeView,
+                            );
                           },
                         ),
                       ),

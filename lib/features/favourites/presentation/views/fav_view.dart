@@ -1,3 +1,4 @@
+import 'package:diska_app/core/routes/app_route.dart';
 import 'package:diska_app/core/utils/custom_empty_card.dart';
 import 'package:diska_app/core/utils/footer.dart';
 import 'package:diska_app/core/utils/top_bar.dart';
@@ -34,7 +35,10 @@ class FavView extends StatelessWidget {
                               "يبدو أنك لم تضف أي منتجات إلى المفضلة بعد.",
                           buttonText: "ابدأ التسوق",
                           onButtonPressed: () {
-                            Navigator.pop(context);
+                            Navigator.pushReplacementNamed(
+                              context,
+                              AppRoute.homeView,
+                            );
                           },
                         ),
                       ),
@@ -52,7 +56,7 @@ class FavView extends StatelessWidget {
               slivers: [
                 SliverToBoxAdapter(child: TopBar()),
                 const SliverToBoxAdapter(child: SizedBox(height: 20)),
-                 SliverToBoxAdapter(child: FavHeader()),
+                SliverToBoxAdapter(child: FavHeader()),
                 SliverList(
                   delegate: SliverChildBuilderDelegate((context, index) {
                     final item = state.items[index];
