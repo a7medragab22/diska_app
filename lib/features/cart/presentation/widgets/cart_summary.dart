@@ -1,4 +1,6 @@
+import 'package:diska_app/core/routes/app_route.dart';
 import 'package:diska_app/core/themes/app_colors.dart';
+import 'package:diska_app/core/utils/custom_button.dart';
 import 'package:diska_app/features/cart/logic/cubits/cart_cubit/cart_state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -13,6 +15,8 @@ class CartSummary extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.all(16),
+      margin: EdgeInsets.symmetric(vertical: 24.h),
+
       decoration: const BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
@@ -31,27 +35,13 @@ class CartSummary extends StatelessWidget {
           _row("الإجمالي", "${state.total} ج.م", isTotal: true, isHeader: true),
 
           const SizedBox(height: 10),
-
-          Container(
-            height: 50,
-            decoration: BoxDecoration(
-              gradient: const LinearGradient(
-                colors: [Color(0xFF6A5AE0), Color(0xFF4B3FD3)],
-              ),
-              borderRadius: BorderRadius.circular(12),
-            ),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                FaIcon(
-                  FontAwesomeIcons.arrowLeft,
-                  color: Colors.white,
-                  size: 16,
-                ),
-                SizedBox(width: 8.w),
-                Text("إتمام الشراء", style: TextStyle(color: Colors.white)),
-              ],
-            ),
+          CustomButton(
+            text: "إتمام الشراء",
+            faIcon: FontAwesomeIcons.arrowLeft,
+            isFaicon: true,
+            onPressed: () =>
+                Navigator.pushNamed(context, AppRoute.checkoutView),
+            backgroundColor: AppColors.primaryLight,
           ),
         ],
       ),

@@ -25,7 +25,9 @@ class CustomEmptyCard extends StatelessWidget {
       textDirection: TextDirection.rtl,
       child: Padding(
         padding: EdgeInsets.symmetric(horizontal: 16.w),
-        child: Center(
+        
+        child: 
+        Center(
           child: DottedBorder(
             options: RoundedRectDottedBorderOptions(
               radius: Radius.circular(20),
@@ -33,7 +35,6 @@ class CustomEmptyCard extends StatelessWidget {
               strokeWidth: 2,
               color: Colors.grey,
             ),
-
             child: Container(
               width: double.infinity,
               padding: EdgeInsets.symmetric(vertical: 40.h, horizontal: 20.w),

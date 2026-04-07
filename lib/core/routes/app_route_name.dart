@@ -8,6 +8,8 @@ import 'package:diska_app/features/auth/register/data/repos/register_repo_impl.d
 import 'package:diska_app/features/auth/register/logic/cubits/register_cubit/register_cubit.dart';
 import 'package:diska_app/features/auth/register/presentation/views/register_view.dart';
 import 'package:diska_app/features/cart/presentation/views/cart_view.dart';
+import 'package:diska_app/features/checkout/logic/cubits/checkout_cubit/checkout_cubit.dart';
+import 'package:diska_app/features/checkout/presentation/views/checkout_view.dart';
 import 'package:diska_app/features/favourites/presentation/views/fav_view.dart';
 import 'package:diska_app/features/home/logic/cubits/category_cubit/category_cubit.dart';
 import 'package:diska_app/features/home/logic/cubits/offer_cubit/offer_cubit.dart';
@@ -39,5 +41,7 @@ class AppRouteName {
       create: (_) => RegisterCubit(RegisterRepoImpl()),
       child: RegisterView(),
     ),
+    AppRoute.checkoutView: (context) =>
+        BlocProvider(create: (_) => CheckoutCubit(), child: CheckoutView()),
   };
 }

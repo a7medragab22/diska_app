@@ -4,13 +4,15 @@ import 'package:flutter/material.dart';
 class Label extends StatelessWidget {
   const Label({
     super.key,
-    required this.controller,
+    this.controller,
     required this.hint,
     required this.labelName,
+    this.maxLines = 1
   });
-  final TextEditingController controller;
+  final TextEditingController? controller;
   final String hint;
   final String labelName;
+  final int maxLines;
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +32,7 @@ class Label extends StatelessWidget {
         const SizedBox(height: 8),
 
         /// Phone Field
-        CustomTextFeild(hint: hint, controller: controller),
+        CustomTextFeild(hint: hint, controller: controller!  , maxLines: maxLines,),
 
         const SizedBox(height: 18),
       ],
