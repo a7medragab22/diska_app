@@ -35,9 +35,6 @@ class _LoginViewState extends State<LoginView> {
                 gradient: LinearGradient(
                   colors: [Color(0xff0B1A2B), Color(0xffC9A227)],
                 ),
-                boxShadow: [
-                
-                ]
               ),
             ),
 
@@ -230,11 +227,17 @@ class _LoginViewState extends State<LoginView> {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            Text(
-                              "إنشاء حساب جديد",
-                              style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                color: Color(0xff0B1A2B),
+                            GestureDetector(
+                              onTap: () => Navigator.pushNamed(
+                                context,
+                                AppRoute.registerView,
+                              ),
+                              child: Text(
+                                "إنشاء حساب جديد",
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  color: Color(0xff0B1A2B),
+                                ),
                               ),
                             ),
                             SizedBox(width: 4.h),
@@ -248,7 +251,10 @@ class _LoginViewState extends State<LoginView> {
                         Center(
                           child: GestureDetector(
                             onTap: () {
-                              Navigator.pop(context);
+                              Navigator.pushReplacementNamed(
+                                context,
+                                AppRoute.homeView,
+                              );
                             },
                             child: Text(
                               "← العودة للرئيسية",

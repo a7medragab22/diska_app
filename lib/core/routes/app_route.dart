@@ -7,4 +7,5 @@ class AppRoute {
   static const String registerView = '/register';
   static const String forgetPasswordView = '/forget-password';
   static const String newPasswordView = '/new-password';
+  static const String checkoutView = '/checkout';
 }
